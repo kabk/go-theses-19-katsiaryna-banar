@@ -1,0 +1,36 @@
+* {
+	margin:0;
+	padding:0;
+
+}
+
+html, body { height: 100% }
+html { background: white}
+body {
+
+	font-family: 'Satyr-Regular', serif;
+	
+}
+
+.title {
+	font-family: 'Satyr-Regular', serif;
+	text-transform:uppercase;
+	font-size: 18pt;
+
+
+}
+
+.body-text {
+	font-family: 'Satyr-Regular', serif;
+	font-size: 18pt;
+}
+
+.header{
+	font-family: 'Satyr-Regular', serif;
+	font-size: 16pt;
+	text-transform:uppercase;
+}
+
+.column {
+	width: 33.33%;
+}
