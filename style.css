@@ -1,0 +1,341 @@
+@font-face {
+font-family: 'Satyr-Regular';
+  src: url('Satyr-Regular.otf');
+}
+
+@font-face {
+font-family: 'mplus-regular';
+  src: url('mplus-1m-regular.ttf');
+}
+
+
+
+body {
+	width: 100%;
+	left:0;
+  	right:0;
+ 	padding: 0;
+ 	margin: 0;
+ 	font-family: 'Satyr-Regular';
+ 	color:white;
+
+ 	background: url("0.jpg");
+ 	background-repeat: no-repeat;
+ 	background-size: 55%;
+ 	background-position: center;
+ 	background-color: black;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+
+    line-height: 14pt;
+/*
+ 	  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;*/
+
+}
+
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+a:visited {
+	color: white;
+	text-decoration: none;
+
+}
+a {
+	color: white;
+	text-decoration: none;
+	cursor: default;
+}
+.main-container {
+
+	width:100%;
+	height:50%;
+	/*border: 4pt solid red;*/
+	position: absolute;
+}
+
+
+.drop-down-menu {
+	position: relative;
+
+}
+
+.menu-title {
+  font-size: 28px;
+  cursor: pointer;
+  display:block;
+  margin: 0;
+  padding: 10px 0 10px 15px;
+}
+/*.meters {
+
+	position: relative;
+	top: 0;
+	padding-top: 0;
+	padding:100px;
+}*/
+
+.menu-title-m {
+  font-family: 'mplus-regular';
+	right:20px;
+	top:0;
+	position: absolute;
+	margin:0;
+	padding: 13px 0;
+}
+.activate {
+  display: none;
+
+/*  position: absolute;*/
+  cursor: pointer;
+  width: 100%;
+  left:0;
+  right:0;
+  padding: 0;
+  margin: 0;
+  height: 40px;
+ /* margin: 0 0 0 -15px;*/
+  opacity: 0;
+}
+.top {
+  padding: 20px;
+}
+
+h2 {
+	top: 0;
+	margin-bottom: 0;
+  display: inline-block;
+	background-color: black;
+  float: left;
+  font-size: 28px;
+  padding-left: 5px;
+  display: inline-block;
+}
+
+.credentials {
+  display: inline-block;
+  float: right;
+}
+
+.menu a, .drop-down-menu {
+border-bottom:1pt solid #333333;
+padding: 10px;
+}
+
+.menu a, .drop-down-menu:first-child {
+  border-top: 1px solid #333333;
+}
+
+/*.menu a:hover {
+  background: lightgrey;
+
+}*/
+
+.drop-down a {
+
+  background: black;
+}
+
+/*.drop-down a:hover {
+}*/
+
+.menu  {
+  position: relative;
+  margin-top: 60px;
+
+
+}
+
+:checked ~ .menu-title {
+ /* background: lightgrey;*/
+}
+
+.drop-down {
+  max-height: 0;
+  overflow: hidden;
+
+
+}
+
+/*.drop-down a {
+  background: #222;
+}*/
+
+.activate:checked ~ .drop-down {
+  max-height: 500%;
+}
+
+.drop-down, .menu a, .drop-down-menu {
+  -webkit-transform: translateZ(0);
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.5s;
+}
+
+
+
+.content {
+  width: 100%;
+}
+
+.text {
+  float: left;
+  font-size: 22px;
+  line-height: 1.2;
+	width: 60%;
+	margin-right: 5%;
+  padding-left: 15px;
+}
+
+.images {
+  width: 30%;
+  margin-right: 5%;
+  float: right;
+}
+
+
+
+
+
+#last {
+	padding-bottom: 10%;
+}
+
+
+.small-img {
+	clear: both;
+  max-width: 100%;
+}
+
+
+
+.big-img {
+	height: 300px;
+	top:8%;
+	float: right;
+	position: sticky;
+	display: none;
+}
+
+/**/
+
+
+.footer, .bibliography {
+	bottom:0;
+	position: fixed;
+	width: 100%;
+	height:60px;
+	z-index: 100000;
+	border-top: solid white 1pt;
+	border-bottom: solid white 1pt;
+	background: black;
+    overflow-y: scroll;
+/*	display: inline-block;*/
+}
+
+
+.grid-container {
+  display: grid;
+/*background-color: green;*/
+  grid-template-columns: auto auto auto;
+ box-sizing: border-box;
+
+
+
+/*  grid-gap: -1px;*/
+/*  padding: 10px;*/
+}
+
+.grid-container > div {
+
+ 	text-align: left;
+/*  padding: 20px 0;*/
+	border-left: solid 1pt white;
+	height:60px;
+  	font-size: 12px;
+ 	padding: 20px;
+ 	margin: 0;
+}
+
+.grid-container > div:first-child {
+  border-left: 0;
+}
+
+.grid-item {
+  font-family: 'mplus-regular';
+/*	max-width:100%;
+	width:20%;*/
+	/*border: solid pink 5pt;*/
+}
+#first-grid {
+	width:30%;
+	position: fixed;
+	left:0;
+
+}
+#second-grid {
+	width:30%;
+	position: fixed;
+	left:34%;
+}
+
+#third-grid {
+	width:30%;
+	position: fixed;
+	right:0;
+}
+
+a {
+	display: none;
+}
+.view {
+	display:block;
+}
+
+
+.bibliography {
+  font-family: 'mplus-regular';
+	padding-top: 20px;
+	text-align: center;
+	font-size: 15pt;
+	visibility: visible;
+	 -webkit-transition: height 0.5s; /* For Safari 3.1 to 6.0 */
+  	transition: height 0.5s;
+
+}
+
+.bibliography a {
+display: block;
+}
+
+.hide {
+	display: none;
+
+}
+#biblio:hover {
+cursor: pointer;
+}
+
+
+.open {
+	height: 450px;
+	/*background-color:red;*/
+}
+
+
+.bib {
+	padding-top: 100px;
+	text-align: left;
+	-webkit-column-count: 3; /* Chrome, Safari, Opera */
+    -moz-column-count: 3; /* Firefox */
+     column-count: 3;
+}
