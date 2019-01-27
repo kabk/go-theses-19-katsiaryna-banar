@@ -6,6 +6,7 @@ font-family: 'Satyr-Regular';
 @font-face {
 font-family: 'mplus-regular';
   src: url('mplus-1m-regular.ttf');
+
 }
 
 
@@ -24,6 +25,7 @@ body {
  	background-size: 55%;
  	background-position: center;
  	background-color: black;
+  word-break: all;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -44,16 +46,15 @@ body {
   box-sizing: border-box;
 }
 
-a:visited {
-	color: white;
-	text-decoration: none;
-
-}
 a {
 	color: white;
 	text-decoration: none;
 	cursor: default;
 }
+p.index{
+  padding: 5px;
+}
+
 .main-container {
 
 	width:100%;
@@ -123,6 +124,7 @@ h2 {
 .credentials {
   display: inline-block;
   float: right;
+  font-size:15px;
 }
 
 .menu a, .drop-down-menu {
@@ -170,7 +172,7 @@ padding: 10px;
 }*/
 
 .activate:checked ~ .drop-down {
-  max-height: 500%;
+  max-height: 800%;
 }
 
 .drop-down, .menu a, .drop-down-menu {
@@ -182,12 +184,16 @@ padding: 10px;
 }
 
 
-
+#biblio {
+  color: white;
+}
 .content {
   width: 100%;
 }
 
 .text {
+  margin-block-start: 0;
+  margin-block-end: 0;
   float: left;
   font-size: 22px;
   line-height: 1.2;
@@ -219,7 +225,8 @@ padding: 10px;
 
 
 .big-img {
-	height: 300px;
+	height: auto;
+  max-width: 460px;
 	top:8%;
 	float: right;
 	position: sticky;
@@ -238,9 +245,82 @@ padding: 10px;
 	border-top: solid white 1pt;
 	border-bottom: solid white 1pt;
 	background: black;
-    overflow-y: scroll;
+  overflow-y: hidden;
 /*	display: inline-block;*/
 }
+
+.bib {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.bibliography-column {
+  margin-top: 50px;
+  width: 30%;
+  margin-right: 5%;
+  height: 100%;
+  float: left;
+  padding-bottom: 150px;
+  text-align: left;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  position: relative;
+  font-size: 12pt;
+}
+
+#last {
+  margin-right: 0;
+}
+
+
+.column-inside {
+  position: absolute;
+  top: 0;
+  padding-top: 50px;
+  bottom: 100px;
+  left: 0;
+  right:-17px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.bibliography-column::-webkit-scrollbar-thumb {
+  background-color: pink;
+  outline: 1px solid slategrey;
+}
+
+
+
+.bibliography.open:before {
+  content: '';
+  width: 100%;
+  height: 50px;
+  bottom: 0;
+  display: block;
+  z-index: 999;
+  position: absolute;
+  background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+}
+
+
+.bib:after {
+  content: '';
+  width: 100%;
+  height: 50px;
+  top: 50px;
+  display: block;
+  position: absolute;
+  background: -moz-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(0,0,0,1) 0%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(0,0,0,1) 0%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+}
+
+
 
 
 .grid-container {
@@ -296,10 +376,25 @@ padding: 10px;
 
 a {
 	display: none;
+  color: black;
 }
+
+
 .view {
-	display:block;
+	display: block;
+  animation: example 0.2s ease;
+  animation-fill-mode: forwards;
 }
+
+#conclusion {
+  width: 43.5%;
+  min-height: 150%;
+}
+@keyframes example {
+  from {color: black; transform: translateY(10px);}
+  to {color: white; transform: translateY(0);}
+}
+
 
 
 .bibliography {
@@ -314,7 +409,8 @@ a {
 }
 
 .bibliography a {
-display: block;
+  z-index: 999;
+  display: block;
 }
 
 .hide {
@@ -329,13 +425,4 @@ cursor: pointer;
 .open {
 	height: 450px;
 	/*background-color:red;*/
-}
-
-
-.bib {
-	padding-top: 100px;
-	text-align: left;
-	-webkit-column-count: 3; /* Chrome, Safari, Opera */
-    -moz-column-count: 3; /* Firefox */
-     column-count: 3;
 }
